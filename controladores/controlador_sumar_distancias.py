@@ -6,4 +6,4 @@ def sumar_distancias_e_imprimir(ruta_archivo):
     resultados = sumar_distancias(datos_json)
 
     for matricula, suma_distancias in resultados.items():
-        print(f"Matricula: {matricula}, Distancia: {suma_distancias}")
+        print(f"Matricula: {matricula}, Suma de Distancias: {suma_distancias}")

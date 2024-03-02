@@ -1,30 +1,38 @@
 from controladores.controlador_imprimir_lineas import imprimir_lineas
 from controladores.controlador_imprimir_json import imprimir_json
 from controladores.controlador_sumar_distancias import sumar_distancias_e_imprimir
-from controladores.controlador_sumar_distancias_por_matricula import sumar_distancias_por_matricula_e_imprimir,comparar_resultados_e_imprimir
+from controladores.controlador_sumar_distancias_por_matricula import sumar_distancias_por_matricula_e_imprimir
+from controladores.controlador_ultimas_posiciones import generar_y_escribir_ultimas_posiciones
+
 
 if __name__ == "__main__":
-    ruta_archivo = "archivos/reto.csv"
+    ruta_archivo_entrada = "archivos/reto.csv"
+    ruta_archivo_salida = "archivos/reto_salida.txt"
 
-    print("Ingrese el número del caso a ejecutar (1 a 8): ")
+    print("Ingrese el número del caso a ejecutar (1 a 5): ")
     
     # Pedir al usuario que elija un caso
     try:
         caso_elegido = int(input())
 
         if caso_elegido == 1:
-            imprimir_lineas(ruta_archivo)
+            imprimir_lineas(ruta_archivo_entrada)
 
         elif caso_elegido == 2:
-            imprimir_json(ruta_archivo)
+            imprimir_json(ruta_archivo_entrada)
         
         elif caso_elegido == 3:
-            sumar_distancias_e_imprimir(ruta_archivo)
+            sumar_distancias_e_imprimir(ruta_archivo_entrada)
             
         elif caso_elegido == 4:
-            sumar_distancias_por_matricula_e_imprimir(ruta_archivo)
-            comparar_resultados_e_imprimir(ruta_archivo)
+            sumar_distancias_por_matricula_e_imprimir(ruta_archivo_entrada)
 
+        elif caso_elegido == 5:
+            generar_y_escribir_ultimas_posiciones(ruta_archivo_entrada, ruta_archivo_salida)
+
+        elif caso_elegido == 6:
+            print("Ejecuta el comando python api_rest.py")
+        
         else:
             print("Caso no válido.")
 
