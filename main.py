@@ -3,13 +3,13 @@ from controladores.controlador_imprimir_json import imprimir_json
 from controladores.controlador_sumar_distancias import sumar_distancias_e_imprimir
 from controladores.controlador_sumar_distancias_por_matricula import sumar_distancias_por_matricula_e_imprimir
 from controladores.controlador_ultimas_posiciones import generar_y_escribir_ultimas_posiciones
-
+from controladores.controlador_api_rest import app
 
 if __name__ == "__main__":
     ruta_archivo_entrada = "archivos/reto.csv"
     ruta_archivo_salida = "archivos/reto_salida.txt"
 
-    print("Ingrese el número del caso a ejecutar (1 a 5): ")
+    print("Ingrese el número del caso a ejecutar (1 a 8): ")
     
     # Pedir al usuario que elija un caso
     try:
@@ -31,7 +31,7 @@ if __name__ == "__main__":
             generar_y_escribir_ultimas_posiciones(ruta_archivo_entrada, ruta_archivo_salida)
 
         elif caso_elegido == 6:
-            print("Ejecuta el comando python api_rest.py")
+            app.run()
         
         else:
             print("Caso no válido.")
