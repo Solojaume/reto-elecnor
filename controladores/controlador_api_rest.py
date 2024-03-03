@@ -15,8 +15,7 @@ def obtener_ultima_posicion(matricula):
     else:
         return jsonify({"error": "Matrícula no encontrada"}), 404
 
-
-def arrancar_api_rest(ruta_archivo_ultimas_posiciones,debug_option):
+def cargar_ultima_posicion(u_p):
     global ultimas_posiciones
-    ultimas_posiciones = cargar_ultimas_posiciones_desde_archivo(ruta_archivo_ultimas_posiciones)
-    app.run(debug = debug_option)
+    if not ultimas_posiciones:
+        ultimas_posiciones = u_p

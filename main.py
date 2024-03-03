@@ -3,7 +3,7 @@ from controladores.controlador_imprimir_json import imprimir_json
 from controladores.controlador_sumar_distancias import sumar_distancias_e_imprimir
 from controladores.controlador_sumar_distancias_por_matricula import sumar_distancias_por_matricula_e_imprimir
 from controladores.controlador_ultimas_posiciones import generar_y_escribir_ultimas_posiciones
-from controladores.controlador_api_rest import arrancar_api_rest
+from controladores.controlador_arancar_api_rest_archivo import *
 
 if __name__ == "__main__":
     ruta_archivo_entrada = "archivos/reto.csv"
@@ -31,8 +31,8 @@ if __name__ == "__main__":
             generar_y_escribir_ultimas_posiciones(ruta_archivo_entrada, ruta_archivo_salida_ultimas_posiciones)
 
         elif caso_elegido == 6:
-            arrancar_api_rest(ruta_archivo_salida_ultimas_posiciones,True)
-        
+            arrancar_api_rest_desde_archivo(ruta_archivo_salida_ultimas_posiciones,False)
+            
         else:
             print("Caso no válido.")
 
